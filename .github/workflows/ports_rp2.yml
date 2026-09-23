@@ -33,6 +33,7 @@ jobs:
     - name: Build
       run: |
         cd ports/rp2
+	make submodules
         make BOARD=Twilight_Lightbox_Controller
     - name: Upload Custom UF2 Firmware
       uses: actions/upload-artifact@v4
