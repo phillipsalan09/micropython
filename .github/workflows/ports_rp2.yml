@@ -32,3 +32,9 @@ jobs:
       run: tools/ci.sh rp2_setup
     - name: Build
       run: tools/ci.sh rp2_build
+    - name: Upload Custom UF2 Firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: Twilight-Lightbox-Firmware
+        path: micropython repo/ports/rp2/build-*/*.uf2
+
