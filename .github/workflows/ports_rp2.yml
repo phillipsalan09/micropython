@@ -31,7 +31,9 @@ jobs:
     - name: Install packages
       run: tools/ci.sh rp2_setup
     - name: Build
-      run: tools/ci.sh rp2_build
+      run: |
+        cd 'micropython repo/ports/rp2'
+        make BOARD=Twilight_Lightbox_Controller
     - name: Upload Custom UF2 Firmware
       uses: actions/upload-artifact@v4
       with:
